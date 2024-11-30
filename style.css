@@ -86,6 +86,42 @@ nav button:hover {
     background-color: #1E73BE; 
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #325BA4;
+}
+
+/* Style pour le menu déroulant */
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #f4f4f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #325BA4;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #cfe6fa;
+}
+
 .greeting {
     text-align: center;
     margin: 50px 0;
@@ -167,8 +203,8 @@ textarea {
 }
 
 button[type="submit"] {
-    margin-top: 20px;
-    width: 30%;
+    margin-top: 50px;
+    width: 100%;
     padding: 10px;
     background-color: #325BA4;
     color: #FFFFFF;
@@ -288,3 +324,69 @@ body.dark-mode button:hover {
 }
 
 
+@media only screen and (max-width: 768px) {
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton hamburger */
+    }
+
+    /* Masquer l'image sur les téléphones */
+    .image-container {
+        display: none;
+    }
+
+    /* Faire en sorte que le formulaire occupe toute la largeur */
+    .form-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Adapter la taille des champs et du bouton */
+    input, textarea, button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* Espacement des éléments du formulaire */
+    .form-group,
+    label,
+    .g-recaptcha {
+        margin-bottom: 15px;
+    }
+
+    /* Réduire les marges autour de la page pour un meilleur ajustement */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-container {
+        flex-direction: column;
+        padding: 10px;
+        margin: 0 30px 30px 30px;
+        gap: 10px;
+    }
+
+    /* Centrer le texte de bienvenue */
+    .greeting {
+        margin : 50px 50px 10px 10px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    /* Ajuster le bouton d'envoi */
+    button[type="submit"] {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
